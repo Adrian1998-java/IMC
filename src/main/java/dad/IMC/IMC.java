@@ -117,21 +117,23 @@ public class IMC extends Application {
 				.concat(Bindings
 							.when(c.lessThan(18.5))
 							.then("Bajo Peso")
-//							.otherwise(Bindings
-//										.when(c.greaterThanOrEqualTo(18.5).and(c.lessThan(25)))
-//										.then("Normal")
-//										.otherwise(Bindings
-//												.when(c.greaterThanOrEqualTo(25).and(c.lessThan(30)))
-//												.then("Sobrepeso")
-//												.otherwise(Bindings
-//														.when(c.greaterThanOrEqualTo(30))
-//														.then("Obesidad")
-//														)
-//												)
-//												
-//										)
-									
-							);
+							.otherwise("")
+							)
+				.concat(Bindings
+							.when(c.greaterThanOrEqualTo(18.5).and(c.lessThan(25)))
+							.then("Normal")
+							.otherwise("")
+							)
+				.concat(Bindings
+							.when(c.greaterThanOrEqualTo(25).and(c.lessThan(30)))
+							.then("Sobrepeso")
+							.otherwise("")
+							)
+				.concat(Bindings
+						.when(c.greaterThanOrEqualTo(30))
+						.then("Obeso")
+						.otherwise("")
+				);
 		
 				
 		beredicto.textProperty().bind(elBeredicto);
