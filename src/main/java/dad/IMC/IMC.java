@@ -75,6 +75,7 @@ public class IMC extends Application {
 		root.setFillWidth(false);
 		root.setAlignment(Pos.CENTER);
 		root.getChildren().addAll(pesoBox, alturaBox, IMCBox, beredicto);
+		root.setSpacing(5);
 		
 		Scene scene = new Scene(root, 320, 200);
 		
